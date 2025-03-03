@@ -22,7 +22,6 @@ contributes:
       toc: true
       toc-depth: 1
       toc-title: Gliederung
-      section-divs: false
       title-slide-attributes:
         data-state: "hide-menubar"
       simplemenu:
