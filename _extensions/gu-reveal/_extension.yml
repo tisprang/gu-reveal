@@ -14,14 +14,20 @@ contributes:
       css: styles.css
       template-partials:
         - title-slide.html
+        - toc-slide.html
       width: 100%
       height: 100%
       margin: 0
       slide-number: c/t
-      section-divs: true
+      toc: true
+      toc-depth: 1
+      toc-title: Gliederung
+      section-divs: false
+      title-slide-attributes:
+        data-state: "hide-menubar"
       simplemenu:
+        flat: true
         barhtml:
-          header: "<div class='menubar'><ul class='menu'></ul><div>"
-        scale: 0.67
+          footer: "<div class='menubar'><ul class='menu'></ul><div>"
       revealjs-plugins:
         - simplemenu
