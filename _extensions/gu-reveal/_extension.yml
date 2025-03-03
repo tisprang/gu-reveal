@@ -23,5 +23,5 @@ contributes:
         barhtml:
           header: "<div class='menubar'><ul class='menu'></ul><div>"
         scale: 0.67
-revealjs-plugins:
-  - simplemenu
+      revealjs-plugins:
+        - simplemenu
