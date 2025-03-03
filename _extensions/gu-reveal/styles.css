@@ -1,0 +1,65 @@
+:root {
+    --gu-blue: rgb(0, 97, 143);
+    --gu-light-blue: rgb(72, 169, 218);
+    --gu-grey: rgb(248, 246, 245);
+}
+
+.reveal{
+
+    img {
+        margin: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--gu-blue);
+    }
+    
+    .title-banner {
+        width: 100vw;
+        height: 65vh;
+        overflow: hidden;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+    }
+
+    .imgcont{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+
+    .imgcont > img{
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+    .imgcont:after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.7;
+        background-image: linear-gradient(351deg, var(--gu-light-blue) 28%, var(--gu-blue) 87%);
+    }
+
+    .quarto-title-authors {
+        position: absolute;
+        color: white;
+    }
+
+    .title, .subtitle {
+        position: absolute;
+        color: white;
+        font-family: "Meridien";
+    }
+}

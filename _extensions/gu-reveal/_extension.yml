@@ -1,10 +1,18 @@
 title: Gu-reveal
 author: tisprang
-version: 1.0.0
+version: 0.1.0
 quarto-required: ">=1.6.0"
 contributes:
   formats:
     revealjs:
-      theme: [dark, custom.scss]
+      resources:
+        - fonts/meridien.ttf
+      embed-resources: true
+      theme: [default, custom.scss]
       logo: logo.svg
-
+      css: styles.css
+      template-partials:
+        - title-slide.html
+      width: 100%
+      height: 100%
+      margin: 0

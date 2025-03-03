@@ -1,9 +1,18 @@
 ---
-title: Untitled
+title: A Jumpstart to Data Analysis in R
+subtitle: Concepts, Software and Applications
 format:
   gu-reveal-revealjs: default
-author: tisprang
-date: last-modified
+author:
+  - name: Timo Sprang
+    url: https://www.timo-sprang.net
+    orcid: 0009-0005-3798-7747
+    mail: sprang@soz.uni-frankfurt.de
+    affiliation:
+      - name: Goethe-Universität
+        city: Frankfurt am Main
+date: today
+date-format: DD.MM.YYYY
 ---
 
 ## Introduction

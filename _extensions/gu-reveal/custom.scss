@@ -1,8 +1,20 @@
 /*-- scss:defaults --*/
 
+@font-face {
+    font-family: "Meridien";
+    src: url("../../../../../fonts/meridien.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Univers";
+    src: url("../../../../../fonts/univers.ttf") format('truetype');
+}
+
 /* TODO: Customize presentation appearance by setting SCSS variables */
 /* See https://quarto.org/docs/presentations/revealjs/themes.html#customizing-themes */
 
 /*-- scss:rules --*/
+
+$bg-color: rgb(248, 246, 245);
+
 
 /* TODO: Provide custom CSS rules */
