@@ -7,12 +7,21 @@ contributes:
     revealjs:
       resources:
         - fonts/meridien.ttf
+        - fonts/univers.ttf
       embed-resources: true
       theme: [default, custom.scss]
-      logo: logo.svg
+      logo: logo.png
       css: styles.css
       template-partials:
         - title-slide.html
       width: 100%
       height: 100%
       margin: 0
+      slide-number: c/t
+      section-divs: true
+      simplemenu:
+        barhtml:
+          header: "<div class='menubar'><ul class='menu'></ul><div>"
+        scale: 0.67
+revealjs-plugins:
+  - simplemenu

@@ -52,14 +52,82 @@
         background-image: linear-gradient(351deg, var(--gu-light-blue) 28%, var(--gu-blue) 87%);
     }
 
-    .quarto-title-authors {
-        position: absolute;
-        color: white;
+    .title-block {
+        font-family: "Meridien";
+        position:fixed;
+        bottom:0;
+        left:2%;
+        width: min-content;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 50%;
+        overflow-x: hidden;
     }
 
-    .title, .subtitle {
+    .title {
+        text-align: left;
+        white-space: nowrap; 
+        color: var(--gu-grey);
+        margin: 5px;
+        font-size: max(48pt, 80%, 2em);
+    }
+
+    .title-text{
+        position: relative;
+        font-family: "Univers";
+        font-variant: small-caps;
+        border-bottom: 2px solid var(--gu-grey);
+    }
+
+    .subtitle {
+        color: var(--gu-grey);
+        position: relative;
+        font-family: "Univers";
+        text-align: left;
+        padding: 0 0 0 4%;
+        font-size: max(24pt, 40%);
+        margin-top: 0px !important;
+        line-height: 1;
+        margin-bottom: 15px !important;
+        max-width: 100%;
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .slide-logo {
+        position: fixed;
+        bottom: 15px !important;
+        max-height: 10% !important;
+        height: max(10%) !important;
+    }
+
+    .authors {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
         position: absolute;
-        color: white;
-        font-family: "Meridien";
+        top: 5px;
+        text-align: left;
+        white-space: nowrap; 
+        font-family: "Arial Narrow";
+        color: var(--gu-grey);
+        line-height: 1 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .quarto-title-author-name {
+        font-size: .7em;
+    }
+
+    .quarto-title-author-email {
+        font-size: .6em;
+        margin-bottom: 0 !important;
+    }
+
+    .quarto-title-affiliation {
+        font-size: .6em;
     }
 }
