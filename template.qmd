@@ -13,9 +13,8 @@ author:
         department: Institut für Politikwissenschaft
         url: https://www.fb03.uni-frankfurt.de/92868250/Willkommen_am_Institut_f%C3%BCr_Politikwissenschaft
         city: Frankfurt am Main
-date: today
-date-format: DD.MM.YYYY
 ---
+https://designshack.net/wp-content/uploads/EDUWAN-Online-Lessons-Presentation-PPT-768x512.jpg
 
 ## Why? {data-name="Why?"}
 

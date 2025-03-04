@@ -22,13 +22,15 @@ contributes:
       toc: true
       toc-depth: 1
       toc-title: Gliederung
+      date: today
+      date-format: DD.MM.YYYY
       title-slide-attributes:
         data-state: "hide-menubar"
       section-divs: false
       simplemenu:
         flat: true
         barhtml:
-          footer: "<div class='menubar'><ul class='menu'></ul><div>"
+          footer: "<div class='menubar'><ol class='menu' type='1'></ol><div>"
       revealjs-plugins:
         - simplemenu
         - slide-contents-wrap
