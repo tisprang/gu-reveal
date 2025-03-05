@@ -19,7 +19,9 @@ contributes:
       width: 100%
       height: 100%
       margin: 0
+      slide-level: 2
       slide-number: c/t
+      show-slide-number: all
       toc: true
       toc-depth: 1
       toc-title: Gliederung

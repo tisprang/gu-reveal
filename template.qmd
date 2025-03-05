@@ -14,6 +14,7 @@ author:
         url: https://www.fb03.uni-frankfurt.de/92868250/Willkommen_am_Institut_f%C3%BCr_Politikwissenschaft
         city: Frankfurt am Main
   - name: Autor 2
+lang: de
 ---
 
 ## Why? {data-name="Why?"}
@@ -31,19 +32,7 @@ Simplemenu has a solution for that. Make your presentation in a flat structure (
 
 ## Set it up {data-name="Set it up"}
 
----
 
-### Edit the YAML
-Set the flat option to `true`:
-``` yaml
-format:
-  revealjs:
-    ...
-    simplemenu:
-      flat: true
-```
-
----
 
 ## HTML Markup {data-name="Chapter 555"}
 Build your presentation in a flat way (no nested slides). Then give your sections a `data-name`:
@@ -61,7 +50,6 @@ Lorem ipsum sit dolor amet
 <!-- The 'Chapter 2' menu-item will be active for this slide -->
 Lorem ipsum sit dolor amet
 ```
----
 
 ## {data-name="Chapter 5556"}
 To avoid Quarto creating nested sections, set `section-divs: false` and use dividers to separate your slides.
