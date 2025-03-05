@@ -131,9 +131,11 @@
     .slide-logo {
         position: fixed;
         bottom: 0px !important;
+        right: 0px !important;
         padding-bottom: 7.5px !important;
         padding-top: 7.5px !important;
-        padding-left: 20px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
         height: 8% !important;
         max-height: 8% !important;
         width: 8% !important;
@@ -387,7 +389,7 @@ html:lang(de) .slide-number-a:after {
     position: absolute !important;
     bottom: 0% !important;
     left: calc(80% + 24px) !important;
-    width: calc(100% - 80% - 34px - 8% - 32px) !important;
+    width: calc(100% - 80% - 34px - 8% - 22px) !important;
     padding-left: 5px !important;
     padding-right: 5px !important;
     text-align: center !important;
@@ -400,6 +402,15 @@ html:lang(de) .slide-number-a:after {
     top: unset !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+}
+
+.slide-number, .reveal.has-logo .slide-number a {
+    color: var(--gu-blue) !important;
+    opacity: 1 !important;
+}
+.slide-number, .reveal.has-logo .slide-number a:hover {
+    color: var(--gu-blue) !important;
+    opacity: 1 !important;
 }
 
 .slide-number-pdf {
