@@ -1,7 +1,7 @@
 ---
 title: A Jumpstart to Data Analysis in R
 subtitle: Concepts, Software and Applications
-context: Seminartitel
+context: Seminartitel der so ultra lang ist dass er aber mal sowas von in zwei zeilen angezeigt werden wird
 format:
   gu-reveal-revealjs: default
 author:

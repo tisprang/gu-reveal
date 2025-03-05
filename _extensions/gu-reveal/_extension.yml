@@ -12,6 +12,7 @@ contributes:
       theme: [default, custom.scss]
       logo: logo.png
       css: styles.css
+      template: template.html
       template-partials:
         - title-slide.html
         - toc-slide.html
@@ -37,3 +38,5 @@ contributes:
       include-after-body:
         text: >
           <script type="application/javascript" src="author.js"></script>
+          <script type="application/javascript" src="context.js"></script>
+          <script type="application/javascript" src="title.js"></script>

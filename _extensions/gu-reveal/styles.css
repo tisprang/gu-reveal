@@ -131,7 +131,8 @@
     .slide-logo {
         position: fixed;
         bottom: 0px !important;
-        padding-bottom: 15px !important;
+        padding-bottom: 7.5px !important;
+        padding-top: 7.5px !important;
         padding-left: 20px !important;
         max-height: 8% !important;
         height: 8% !important;
@@ -190,6 +191,7 @@
         height: calc(8% + 15px);
         display:block;
         background-color:inherit;
+        border-top: solid 2px var(--gu-blue);
     }
 
     #menubarbottom::before {
@@ -238,6 +240,11 @@
         padding-top: 1px;
     }
 
+    #menubarbottom > ol li:hover, 
+    #menubarbottom > ol li:hover a  {
+        color: var(--gu-light-blue);
+    }
+
     #menubarbottom > ol li a {
         display: inline;
         color: var(--gu-grey);
@@ -257,17 +264,18 @@
         font-size: .5em;
         color: var(--gu-light-blue);
         position: absolute;
-        bottom: 4%;
+        bottom: 0%;
         left: 0%;
         width: 20%;
-        max-height: 5%;
+        height: calc(8% + 15px);
         padding-left: 5px;
         padding-right: 5px;
         text-align: center;
-        align-items: end;
+        align-content: center;
         overflow: hidden;
         z-index: 1;
-        line-height: 1!;
+        line-height: 1;
+        text-wrap: balance;
     }
 
     .auths p {
@@ -275,23 +283,58 @@
         margin: 0 !important;
     }
 
-    .auths {
+    .pres-context {
         font-family: "Univers";
-        font-variant: small-caps;
         font-size: .5em;
-        color: var(--gu-light-blue);
+        color: var(--gu-blue);
         position: absolute;
-        bottom: 4%;
+        bottom: 0%;
         left: 0%;
-        width: 20%;
-        max-height: 5%;
+        width: 35%;
         padding-left: 5px;
         padding-right: 5px;
         text-align: center;
-        align-items: end;
         overflow: hidden;
-        z-index: 1;
-        line-height: 1!;
+        z-index: 15;
+        line-height: 1;
+        border-right: 2px solid var(--gu-blue);
+        height: calc(8% + 15px);
+        align-content: center;
+        text-wrap: balance;
+    }
+    
+    .pres-context p {
+        line-height: 1 !important;
+        margin: 0 !important;
+    }
+
+    .pres-title {
+        font-family: "Univers";
+        font-size: .5em;
+        color: var(--gu-blue);
+        position: absolute;
+        bottom: 0%;
+        left: calc(35% + 10px);
+        width: 35%;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        overflow: hidden;
+        z-index: 15;
+        line-height: 1;
+        border-right: 2px solid var(--gu-blue);
+        height: calc(8% + 15px);
+        align-content: center;
+        text-wrap: balance;
+    }
+
+    .pres-title p {
+        line-height: 1 !important;
+        margin: 0 !important;
+    }
+
+    .slide-number-a:before{
+        content: "Folie ";
     }
 }
 
@@ -304,5 +347,17 @@ body.hide-menubar #menubarbottom,
 body.hide-menubar .auths,
 .pdf-page.hide-menubar .auths,
 .overview .auths{
+    display: none;
+}
+
+body.hide-menubar .pres-context,
+.pdf-page.hide-menubar .pres-context,
+.overview .pres-context{
+    display: none;
+}
+
+body.hide-menubar .pres-title,
+.pdf-page.hide-menubar .pres-title,
+.overview .pres-title{
     display: none;
 }
