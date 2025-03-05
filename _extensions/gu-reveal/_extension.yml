@@ -34,3 +34,6 @@ contributes:
       revealjs-plugins:
         - simplemenu
         - slide-contents-wrap
+      include-after-body:
+        text: >
+          <script type="application/javascript" src="author.js"></script>

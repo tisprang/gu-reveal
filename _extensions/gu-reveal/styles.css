@@ -3,6 +3,7 @@
     --gu-light-blue: rgb(72, 169, 218);
     --gu-grey: rgb(248, 246, 245);
     --gu-sandgrey: rgb(228, 227, 221);
+    --gu-dark-grey: rgb(77, 75, 70);
 }
 
 .reveal{
@@ -14,9 +15,26 @@
     }
 
     h2 {
+        font-size: 1.8em;
         font-family: "Univers";
         color: var(--gu-grey);
         font-variant: small-caps;
+        background-color: var(--gu-dark-grey);
+        position: absolute;
+        left: 1%;
+        top: 3%;
+        width: 80%;
+        padding-left: 20%;
+        padding-right: 2%;
+        max-width: max-content;
+        max-height: 1.8em;
+        overflow: hidden;
+        z-index: 100;
+        white-space: nowrap; 
+    }
+
+    .slide-number > a[href*='title-slide'] {
+        display: none;
     }
 
     .quarto-title-block > .slide-background-content {
@@ -67,7 +85,7 @@
 
     .title-block {
         font-family: "Meridien";
-        position:fixed;
+        position: absolute;
         bottom:0;
         left:2%;
         width: min-content;
@@ -112,9 +130,12 @@
 
     .slide-logo {
         position: fixed;
-        bottom: 15px !important;
-        max-height: 10% !important;
-        height: max(10%) !important;
+        bottom: 0px !important;
+        padding-bottom: 15px !important;
+        padding-left: 20px !important;
+        max-height: 8% !important;
+        height: 8% !important;
+        border-left: 2px solid var(--gu-blue);
     }
 
     .authors {
@@ -148,14 +169,140 @@
 
     .slide-contents-wrap {
         position: absolute;
-        top: 20%;
-        left: 0%;
-        width: 100%;
-        height: 70%;
+        top: 0;
+        left: 20%;
+        width: 80%;
+        height: 100%;
         background-color: var(--gu-grey);
+        padding-top: calc(3% + 1.8em);
+        padding-left: 1%;
+        padding-right: 1%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
-    .menubar > ul {
-        flex-direction: column;
+    .slide-contents-wrap:after {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        height: calc(8% + 15px);
+        display:block;
+        background-color:inherit;
     }
+
+    #menubarbottom::before {
+        content: "";
+        border: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    #menubarbottom {
+        flex-direction: column;
+        position: absolute;
+        top: calc(1.8em + 10%);
+        left: 2%;
+        font-family: "Univers";
+        color: var(--gu-grey);
+        font-size: .6em;
+        max-height: 40%;
+        max-width: 16%;
+        overflow-y: hidden;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    #menubarbottom > ol {
+        list-style-position: inside;
+        margin: 0;
+        line-height: 1;
+    }
+
+    #menubarbottom > ol .active {
+        border-left: 2px solid var(--gu-grey);
+        padding-left: 10px !important;
+        padding-bottom: 1px;
+        padding-top: 1px;
+    }
+
+    #menubarbottom > ol li:not(.active) {
+        border-left: 2px solid var(--gu-dark-grey);
+        padding-left: 10px !important;
+        padding-bottom: 1px;
+        padding-top: 1px;
+    }
+
+    #menubarbottom > ol li a {
+        display: inline;
+        color: var(--gu-grey);
+    }
+
+    #menubarbottom > ol li::marker {
+        display: inline;
+    }
+
+    .progress {
+        color: var(--gu-light-blue);
+    }
+
+    .auths {
+        font-family: "Univers";
+        font-variant: small-caps;
+        font-size: .5em;
+        color: var(--gu-light-blue);
+        position: absolute;
+        bottom: 4%;
+        left: 0%;
+        width: 20%;
+        max-height: 5%;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        align-items: end;
+        overflow: hidden;
+        z-index: 1;
+        line-height: 1!;
+    }
+
+    .auths p {
+        line-height: 1 !important;
+        margin: 0 !important;
+    }
+
+    .auths {
+        font-family: "Univers";
+        font-variant: small-caps;
+        font-size: .5em;
+        color: var(--gu-light-blue);
+        position: absolute;
+        bottom: 4%;
+        left: 0%;
+        width: 20%;
+        max-height: 5%;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        align-items: end;
+        overflow: hidden;
+        z-index: 1;
+        line-height: 1!;
+    }
+}
+
+body.hide-menubar #menubarbottom,
+.pdf-page.hide-menubar #menubarbottom,
+.overview #menubarbottom {
+    visibility: hidden;
+}
+
+body.hide-menubar .auths,
+.pdf-page.hide-menubar .auths,
+.overview .auths{
+    display: none;
 }
