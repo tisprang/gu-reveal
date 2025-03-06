@@ -143,7 +143,7 @@
         object-fit: contain;
     }
 
-    .authors {
+    .authors{
         display: flex;
         justify-content: flex-end;
         width: 100%;
@@ -198,6 +198,12 @@
         border-top: solid 2px var(--gu-blue);
     }
 
+    section.scrollable .slide-contents-wrap > * {
+        overflow: scroll;
+        width: 97%;
+        max-height: calc(100% - 8% - 15px);
+    }
+
     #menubarbottom::before {
         content: "";
         border: 0;
@@ -214,7 +220,7 @@
         font-family: "Univers";
         color: var(--gu-grey);
         font-size: .6em;
-        max-height: 40%;
+        max-height: 35%;
         max-width: 16%;
         overflow-y: hidden;
         -webkit-transition: none !important;
@@ -270,7 +276,7 @@
         position: absolute;
         bottom: 0%;
         left: 0%;
-        width: 20%;
+        width: calc(20% - 10px);
         height: calc(8% + 15px);
         padding-left: 5px;
         padding-right: 5px;
@@ -339,6 +345,41 @@
 
     .slide-number-delimiter {
         display:none;
+    }
+
+    .img-source {
+        position: absolute;
+        top: calc(1.8em + 45% + 20px);
+        left: 2%;
+        max-height: 35%;
+        width: 16%;
+        font-family: "Univers";
+        color: var(--gu-light-blue) !important;
+        font-size: .4em !important;
+    }
+
+    .img-source a{
+        color: var(--gu-light-blue);
+    }
+
+    .img-source li:hover{
+        color: var(--gu-grey);
+    }
+
+    .img-source li:hover a {
+        color: var(--gu-grey);
+    }
+
+    .img-source li{
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        line-height: 1;
+    }
+
+    .slide aside {
+        bottom: calc(8% + 15px);
+        color: var(--gu-blue);
+        font-size: .4em
     }
 }
 
@@ -419,4 +460,20 @@ html:lang(de) .slide-number-a:after {
 
 .hide-menubar .slide-number-pdf {
     display: none !important;
+}
+
+html:lang(en) .slide-number-pdf:before {
+    content: "Slide ";
+}
+
+html:lang(de) .slide-number-pdf:before {
+    content: "Folie ";
+}
+
+.reveal.smaller .slides section, .reveal .slides section.smaller, .reveal .slides section .callout {
+    font-size: unset;
+}
+
+.reveal.smaller .slides h2, .reveal .slides section.smaller h2 {
+    font-size: 1.8em;
 }

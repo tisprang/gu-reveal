@@ -1,7 +1,7 @@
 ---
-title: A Jumpstart to Data Analysis in R
-subtitle: Concepts, Software and Applications
-context: Seminartitel der so ultra lang ist dass er aber mal sowas von in zwei zeilen angezeigt werden wird
+title: Goethe University RevealJS Slides
+subtitle: With examples
+context: Distributed via GitHub/tisprang
 format:
   gu-reveal-revealjs: default
 author:
@@ -10,19 +10,78 @@ author:
     orcid: 0009-0005-3798-7747
     email: sprang@soz.uni-frankfurt.de
     affiliation:
-      - name: Institut für Politikwissenschaft
+      - name: Goethe University
         url: https://www.fb03.uni-frankfurt.de/92868250/Willkommen_am_Institut_f%C3%BCr_Politikwissenschaft
         city: Frankfurt am Main
-  - name: Autor 2
 lang: de
 ---
 
-## Why? {data-name="Why?"}
+```{r}
+#| label: setup
+#| echo: false
 
-##
-Sometimes viewers don’t understand the whole concept of vertical navigation for nested slides.
+library(gufunctions)
+```
 
-A solution would be to limit your presentation to horizontal slides only, but you might still want to use ‘chapters’ with several slides.
+## Incremental Content {data-name="Standard Slides"}
+
+::: {.incremental}
+- Incremental Bullet 1
+- Incremental Bullet 2
+:::
+
+::: {.nonincremental}
+- Standard Bullet 1
+- Standard Bullet 2
+::: 
+
+## Columns
+
+::::{.columns}
+
+::: {.column width="20%"}
+First columns with 20 % width
+:::
+
+::: {.column width="70%"}
+Second column with 70 % width
+:::
+
+::: {.column width="10%"}
+Third column with 10 % width
+:::
+
+::::
+
+## Smaller content {.smaller}
+
+- Smaller bullet
+- Second smaller bullet
+
+## Scrollable content {.scrollable}
+
+- One
+- Two
+- Three
+- Four
+- Five
+- Six
+- Seven
+- Eight
+- Nine
+- Ten
+- Eleven
+- Twelve
+
+## Footnotes and aside
+
+- Bullet 1^[with a footnote]
+- Bullet 2
+- Bullet 3
+
+::: aside
+Some aside content
+:::
 
 ##
 Simplemenu has a solution for that. Make your presentation in a flat structure (no nested sections) and turn the `flat` option to `true`. Then, if a data-name is set for a slide, any following slides will keep that menu name.

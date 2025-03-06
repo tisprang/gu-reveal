@@ -18,7 +18,7 @@ window.RevealSlideContentsWrap = function () {
 
           children.slice(1).forEach((child) => {
             // Only append children that do not have the 'auths' class
-            if (!child.classList.contains("auths") && !child.classList.contains("pres-context") && !child.classList.contains("pres-title")) {
+            if (!child.classList.contains("auths") && !child.classList.contains("pres-context") && !child.classList.contains("pres-title") && !child.classList.contains("img-source")) {
               wrapper.appendChild(child);
             }
           });
