@@ -24,6 +24,7 @@ library(gufunctions)
 library(ggplot2)
 library(dplyr)
 library(rnaturalearth)
+library(plotly)
 
 theme_set(theme_gu())
 ```
@@ -135,7 +136,7 @@ a + b
 
 p <- ne_countries(scale="small") |>
   mutate(f = ifelse(substring(sovereignt, 1,1) == "M", TRUE, FALSE)) |>
-  ggplot(aes(fill = f)) +
+  ggplot(aes(fill = f, text = sovereignt)) +
     geom_sf(col = "grey30") +
     coord_sf(expand = FALSE) +
     scale_fill_discrete(
@@ -143,98 +144,94 @@ p <- ne_countries(scale="small") |>
         na.translate = FALSE
     )
 
-cowplot::ggdraw(p) +
-  theme(panel.background = element_rect(fill = rgb(248, 246, 245, maxColorValue = 256), colour = rgb(248, 246, 245, maxColorValue = 256)))
+gu_map(p)
 ```
 
 :::
 
 :::{.column width="50%"}
-plotly
+
+```{r}
+#| label: fig-plotly
+#| fig-cap: Responsive plotly figure
+
+ggplotly(p, tooltip = "text", width = 525, height = 310)
+```
+
 :::
 
 ::::
 
-##
-Simplemenu has a solution for that. Make your presentation in a flat structure (no nested sections) and turn the `flat` option to `true`. Then, if a data-name is set for a slide, any following slides will keep that menu name.
+## Tabsets {data-name="Advanced Slides"}
 
-<p class="small">Of course, you can set it to stop inheriting the name as well.</p>
+:::{.panel-tabset}
 
+### Tab 1
 
-## Set it up {data-name="Set it up"}
+Content of the first tab
 
+### Tab 2
 
+Content of the second tab
 
-## HTML Markup {data-name="Chapter 555"}
-Build your presentation in a flat way (no nested slides). Then give your sections a `data-name`:
+:::
 
-``` markdown
-## Chapter one {data-name="Chapter 1"}
-<!-- The 'Chapter 1' menu-item will be active for this slide -->
-Lorem ipsum sit dolor amet
+## Slide without menu position {data-sm="false"}
 
-## Another slide 
-<!-- The 'Chapter 1' menu-item will be active for this slide -->
-Lorem ipsum sit dolor amet
+This slide will neither be counted nor have a menu entry
 
-## Chapter two {data-name="Chapter 2"}
-<!-- The 'Chapter 2' menu-item will be active for this slide -->
-Lorem ipsum sit dolor amet
-```
+## Arbitrary image placement {data-name="Advanced Slides"}
 
-## {data-name="Chapter 5556"}
-To avoid Quarto creating nested sections, set `section-divs: false` and use dividers to separate your slides.
+![Image IGF](https://www.hessen-schafft-wissen.de/media/pages/hochschulen/goethe-universitaet-frankfurt/b45743e123-1687340764/goethe-uni-1200x.jpg){.absolute top=200 left=0 width="300" height="300"}
 
-``` yaml
-format:
-  revealjs:
-    section-divs: false
-```
+![Image IGF 2](https://www.uni-frankfurt.de/76519229.jpg){.absolute bottom=200 left=500 width="300" height="300"}
 
-``` markdown
-## Chapter one {data-name="Chapter 1"}
-<!-- The 'Chapter 1' menu-item will be active for this slide -->
-Lorem ipsum sit dolor amet
+## Fill content
 
----
+![](https://www.hessen-schafft-wissen.de/media/pages/hochschulen/goethe-universitaet-frankfurt/b45743e123-1687340764/goethe-uni-1200x.jpg){.r-stretch}
 
-## Another slide
-<!-- The 'Chapter 1' menu-item will be active for this slide -->
-Lorem ipsum sit dolor amet
+## Basic Fragments
 
----
+::: {.fragment}
+Fade in
+:::
 
-## Chapter two {data-name="Chapter 2"}
-<!-- The 'Chapter 2' menu-item will be active for this slide -->
-Lorem ipsum sit dolor amet
-```
+::: {.fragment .fade-out}
+Fade out
+:::
 
----
+::: {.fragment .highlight-red}
+Highlight red
+:::
 
-## {data-name="Chapter 55576"}
-Any slides following a slide with a data-name will keep that menu name.
+::: {.fragment .fade-in-then-out}
+Fade in, then out
+:::
 
----
+::: {.fragment .fade-up}
+Slide up while fading in
+:::
 
-## {data-sm="false"}
-To stop inheriting the previous slide menu name, start a new named section, or add `data-sm="false"` to your slide.
+## Advanced Fragments
 
-``` markdown
-## Chapter one {data-name="Chapter 1"}
-<!-- The 'Chapter 1' menu-item will be active for this slide -->
-Lorem ipsum sit dolor amet
+::: {.fragment .fade-in}
+::: {.fragment .highlight-red}
+::: {.fragment .semi-fade-out}
+Fade in > Turn red > Semi fade out
+:::
+:::
+:::
 
-## Another slide 
-<!-- The 'Chapter 1' menu-item will be active for this slide -->
-Lorem ipsum sit dolor amet
+## Fragment Order
 
-## Last slide {data-sm="false"}
-Lorem ipsum sit dolor amet
-```
+::: {.fragment fragment-index=3}
+Appears last
+:::
 
-## That’s it!
+::: {.fragment fragment-index=1}
+Appears first
+:::
 
-## More demos {data-name="More demos"}
-
-For more demos go to the [Simplemenu plugin](https://github.com/Martinomagnifico/reveal.js-simplemenu) for Reveal.js. 
-Not all of the options in the regular plugin are available in the Quarto plugin.
+::: {.fragment fragment-index=2}
+Appears second
+:::

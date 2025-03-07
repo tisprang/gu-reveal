@@ -393,6 +393,20 @@
     .pdf-page.hide-menubar {
         background-color: var(--gu-grey) !important;
     }
+
+    .panel-tabset-tabby {
+        margin-bottom: 0 !important;
+    }
+
+    .panel-tabset-tabby a {
+        color: var(--gu-blue) !important;
+    }
+
+    .tab-content {
+        border: 1px solid var(--gu-blue);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 }
 
 body.hide-menubar #menubarbottom,
