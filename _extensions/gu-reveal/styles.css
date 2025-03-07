@@ -33,20 +33,23 @@
         white-space: nowrap; 
     }
 
+    h3 {
+        color: var(--gu-blue);
+        font-family: "Univers";
+    }
+
+    .slides {
+        background-color: var(--gu-blue);
+    }
+
     .slide-number > a[href*='title-slide'] {
         display: none;
     }
 
-    .quarto-title-block > .slide-background-content {
-        background-color: var(--gu-grey);
-    }
-
-    .slide-background-content {
-        background-color: var(--gu-blue);
-    }
+    
     
     .title-banner {
-        width: 100vw;
+        width: 100%;
         height: 65vh;
         overflow: hidden;
         display: flex;
@@ -141,6 +144,7 @@
         width: 8% !important;
         border-left: 2px solid var(--gu-blue);
         object-fit: contain;
+        z-index: 12 !important;
     }
 
     .authors{
@@ -199,7 +203,7 @@
     }
 
     section.scrollable .slide-contents-wrap > * {
-        overflow: scroll;
+        overflow-y: scroll;
         width: 97%;
         max-height: calc(100% - 8% - 15px);
     }
@@ -381,6 +385,14 @@
         color: var(--gu-blue);
         font-size: .4em
     }
+
+    .pdf-page{
+        background-color: var(--gu-blue) !important;
+    }
+
+    .pdf-page.hide-menubar {
+        background-color: var(--gu-grey) !important;
+    }
 }
 
 body.hide-menubar #menubarbottom,
@@ -476,4 +488,21 @@ html:lang(de) .slide-number-pdf:before {
 
 .reveal.smaller .slides h2, .reveal .slides section.smaller h2 {
     font-size: 1.8em;
+}
+
+body.hide-menubar .slides {
+    background-color: var(--gu-grey);
+}
+
+html.print-pdf #title-slide {
+    align-content: center;
+    height: 1080px;
+}
+
+html.print-pdf .title-banner {
+    height: 65%;
+}
+
+html:not(.print-pdf) .slide-background-content {
+    background-color: black;
 }

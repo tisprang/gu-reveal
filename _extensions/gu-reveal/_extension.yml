@@ -16,8 +16,8 @@ contributes:
       template-partials:
         - title-slide.html
         - toc-slide.html
-      width: 100%
-      height: 100%
+      width: 1920
+      height: 1080
       margin: 0
       slide-level: 2
       slide-number: c/t
@@ -25,6 +25,8 @@ contributes:
       toc: true
       toc-depth: 1
       toc-title: Gliederung
+      highlight-style: github
+      fig-dpi: 300
       date: today
       date-format: DD.MM.YYYY
       title-slide-attributes:
@@ -39,6 +41,7 @@ contributes:
         - slide-contents-wrap
       include-after-body:
         text: >
+          <script type="application/javascript" src="append.js"></script>
           <script type="application/javascript" src="author.js"></script>
           <script type="application/javascript" src="context.js"></script>
           <script type="application/javascript" src="title.js"></script>

@@ -21,6 +21,11 @@ lang: de
 #| echo: false
 
 library(gufunctions)
+library(ggplot2)
+library(dplyr)
+library(rnaturalearth)
+
+theme_set(theme_gu())
 ```
 
 ## Incremental Content {data-name="Standard Slides"}
@@ -82,6 +87,73 @@ Third column with 10 % width
 ::: aside
 Some aside content
 :::
+
+## Code Highlighting {data-name="Computations"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Non executed
+
+```{.r code-line-numbers="|1|3"}
+a = 1
+b = 2
+a + b
+```
+
+:::
+
+::: {.column width="50%"}
+
+### Executed
+
+```{r}
+#| label: calculation
+#| echo: true
+#| code-line-numbers: "|1|3"
+#| code-fold: show
+
+a = 1
+b = 2
+a + b
+```
+
+:::
+
+::::
+
+## Figures
+
+::::{.columns}
+
+:::{.column width="50%"}
+
+```{r}
+#| label: fig-world
+#| fig-cap: Countries first letter F (unresponsive)
+
+p <- ne_countries(scale="small") |>
+  mutate(f = ifelse(substring(sovereignt, 1,1) == "M", TRUE, FALSE)) |>
+  ggplot(aes(fill = f)) +
+    geom_sf(col = "grey30") +
+    coord_sf(expand = FALSE) +
+    scale_fill_discrete(
+        name = "Wahlsystemtyp",
+        na.translate = FALSE
+    )
+
+cowplot::ggdraw(p) +
+  theme(panel.background = element_rect(fill = rgb(248, 246, 245, maxColorValue = 256), colour = rgb(248, 246, 245, maxColorValue = 256)))
+```
+
+:::
+
+:::{.column width="50%"}
+plotly
+:::
+
+::::
 
 ##
 Simplemenu has a solution for that. Make your presentation in a flat structure (no nested sections) and turn the `flat` option to `true`. Then, if a data-name is set for a slide, any following slides will keep that menu name.
