@@ -186,9 +186,22 @@ This slide will neither be counted nor have a menu entry
 
 ![Image IGF 2](https://www.uni-frankfurt.de/76519229.jpg){.absolute bottom=200 left=500 width="300" height="300"}
 
+:::{.img-source}
+**Image Sources**
+
+- [IGF](https://www.hessen-schafft-wissen.de/media/pages/hochschulen/goethe-universitaet-frankfurt/b45743e123-1687340764/goethe-uni-1200x.jpg)
+- [IGF2](https://www.uni-frankfurt.de/76519229.jpg)
+:::
+
 ## Fill content
 
 ![](https://www.hessen-schafft-wissen.de/media/pages/hochschulen/goethe-universitaet-frankfurt/b45743e123-1687340764/goethe-uni-1200x.jpg){.r-stretch}
+
+:::{.img-source}
+**Image Source**
+
+- [IGF](https://www.hessen-schafft-wissen.de/media/pages/hochschulen/goethe-universitaet-frankfurt/b45743e123-1687340764/goethe-uni-1200x.jpg)
+:::
 
 ## Basic Fragments
 
@@ -235,3 +248,8 @@ Appears first
 ::: {.fragment fragment-index=2}
 Appears second
 :::
+
+## Quote
+
+> "This is a quote"
+(by someone)
