@@ -210,6 +210,10 @@
         border-top: solid 2px var(--gu-blue);
     }
 
+    .slide-contents-wrap ::marker {
+        color: var(--gu-blue);
+    }
+
     section.scrollable .slide-contents-wrap > * {
         overflow-y: scroll;
         width: 97%;
