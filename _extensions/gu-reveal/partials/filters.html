@@ -1,0 +1,138 @@
+<script>
+// Function to move elements to the current slide section
+function moveElementToCurrentSlide() {
+    const menubar = document.getElementById("menubarbottom");
+    const nr = document.querySelector(".slide-number");
+    const logo = document.querySelector(".slide-logo");
+    const currentSlide = document.querySelector(".present");
+
+    if (currentSlide) {
+        if (menubar) {
+            currentSlide.appendChild(menubar);
+        } else {
+            console.warn("#menubarbottom was not found on the page.");
+        }
+
+        if (nr) {
+            currentSlide.appendChild(nr);
+        } else {
+            console.warn(".slide-number was not found on the page.");
+        }
+
+        if (logo && !document.documentElement.classList.contains("print-pdf")) {
+            currentSlide.appendChild(logo);
+        }
+    } else {
+        console.warn("No slide with class 'present' found.");
+    }
+}
+
+// Function to move .slide-logo as the first child of .reveal when print-pdf is active
+function checkAndMoveLogoForPrint() {
+    const logo = document.querySelector(".slide-logo");
+    const revealContainer = document.querySelector(".reveal");
+
+    if (document.documentElement.classList.contains("print-pdf")) {
+        if (logo && revealContainer && revealContainer.firstChild !== logo) {
+            revealContainer.insertBefore(logo, revealContainer.firstChild);
+        }
+    } else {
+        moveElementToCurrentSlide(); // Move it back to the current slide
+    }
+}
+
+// Event listener for when Reveal.js is ready (initial load)
+Reveal.addEventListener("ready", function () {
+    moveElementToCurrentSlide();
+    checkAndMoveLogoForPrint();
+});
+
+// Event listener for when the slide changes
+Reveal.addEventListener("slidechanged", function () {
+    moveElementToCurrentSlide();
+    checkAndMoveLogoForPrint();
+});
+
+// MutationObserver to detect class changes on the <html> element
+const observer = new MutationObserver(() => {
+    checkAndMoveLogoForPrint();
+});
+
+// Start observing changes to the class attribute of <html>
+observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Get all meta tags
+    const metaTags = document.querySelectorAll('meta[name="author"]');
+    
+    // Extract author names and join them with ' / '
+    const authors = Array.from(metaTags).map(meta => meta.content).join(' / ');
+    
+    if (authors) {
+        // Create the authors div
+        const authorsDiv = document.createElement("div");
+        authorsDiv.classList.add("auths");
+        
+        // Create the paragraph and set its text
+        const authorsP = document.createElement("p");
+        authorsP.textContent = authors;
+        
+        // Append paragraph to div
+        authorsDiv.appendChild(authorsP);
+        
+        // Append the div to the last child of each slide
+        document.querySelectorAll(".slides section").forEach(slide => {
+            slide.appendChild(authorsDiv.cloneNode(true));
+        });
+    }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the meta tag with name "pres-context"
+    const presMeta = document.querySelector('meta[name="pres-context"]');
+    
+    if (presMeta && presMeta.content) {
+        // Create the pres-context div
+        const contextDiv = document.createElement("div");
+        contextDiv.classList.add("pres-context");
+        
+        // Create the paragraph and set its text
+        const contextP = document.createElement("p");
+        contextP.textContent = presMeta.content;
+        
+        // Append paragraph to div
+        contextDiv.appendChild(contextP);
+        
+        // Append the div to the last child of each slide
+        document.querySelectorAll(".slides section").forEach(slide => {
+            slide.appendChild(contextDiv.cloneNode(true));
+        });
+    }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the document title
+    const presTitle = document.title;
+
+    if (presTitle) {
+        // Create the pres-title div
+        const titleDiv = document.createElement("div");
+        titleDiv.classList.add("pres-title");
+
+        // Create the paragraph and set its text
+        const titleP = document.createElement("p");
+        titleP.textContent = presTitle;
+
+        // Append paragraph to div
+        titleDiv.appendChild(titleP);
+
+        // Append the div to the last child of each slide
+        document.querySelectorAll(".slides section").forEach(slide => {
+            slide.appendChild(titleDiv.cloneNode(true));
+        });
+    }
+});
+</script>

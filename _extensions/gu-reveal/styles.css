@@ -6,6 +6,15 @@
     --gu-dark-grey: rgb(77, 75, 70);
 }
 
+@font-face {
+    font-family: "Meridien";
+    src: local(''), url("fonts/meridien.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Univers";
+    src: local(''), url("fonts/univers.ttf") format('truetype');
+}
+
 .reveal{
 
     font-family: "Arial Narrow";

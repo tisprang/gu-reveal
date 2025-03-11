@@ -1,0 +1,7 @@
+name: Simplemenu
+script: simplemenu.js
+stylesheet: ["simplemenu.css"]
+# self-contained: false
+# config:
+#   chalkboard:
+#     buttons: true

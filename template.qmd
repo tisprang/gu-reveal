@@ -2,8 +2,7 @@
 title: Goethe University RevealJS Slides
 subtitle: With examples
 context: Distributed via GitHub/tisprang
-format:
-  gu-reveal-revealjs: default
+format: gu-reveal-revealjs
 author:
   - name: Timo Sprang
     url: https://www.timo-sprang.net
