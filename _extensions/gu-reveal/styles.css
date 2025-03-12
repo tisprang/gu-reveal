@@ -51,6 +51,11 @@
         font-family: "Univers";
     }
 
+    .r-stretch{
+        max-width: 100%;
+        max-width: 100%;
+    }
+
     #title-slide {
         height: 100%;
         width: 100%;
@@ -439,6 +444,15 @@
     blockquote {
         font-family: "Meridien";
         color: var(--gu-dark-grey);
+    }
+
+    .arrow-right::before {
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent; 
+        border-right:10px solid blue; 
     }
 }
 
