@@ -4,6 +4,7 @@
     --gu-grey: rgb(248, 246, 245);
     --gu-sandgrey: rgb(228, 227, 221);
     --gu-dark-grey: rgb(77, 75, 70);
+    --gu-orange: rgb(201,98,21);
 }
 
 @font-face {
@@ -199,7 +200,7 @@
     }
 
     .slide-contents-wrap {
-        position: absolute;
+        position: relative;
         top: 0;
         left: 20%;
         width: 80%;
@@ -566,4 +567,12 @@ html.print-pdf .title-banner {
 
 html:not(.print-pdf) .slide-background-content {
     background-color: black;
+}
+
+.lightable-striped tbody tr:nth-child(even){
+    background-color: var(--gu-sandgrey) !important;
+}
+
+.lightable-hover tbody tr:hover{
+    background-color: var(--gu-light-blue) !important;
 }
