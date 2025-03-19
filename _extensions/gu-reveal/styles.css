@@ -480,6 +480,10 @@ kbd {
     .citation a {
         color: var(--gu-blue);
     }
+
+    .citation a:hover {
+        filter: brightness(150%);
+    }
 }
 
 body.hide-menubar #menubarbottom,
