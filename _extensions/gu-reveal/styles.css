@@ -484,6 +484,10 @@ kbd {
     .citation a:hover {
         filter: brightness(150%);
     }
+    
+    .img-source .citation {
+        font-size: 1em;
+    }
 }
 
 body.hide-menubar #menubarbottom,
