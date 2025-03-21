@@ -488,6 +488,32 @@ kbd {
     .img-source .citation {
         font-size: 1em;
     }
+
+    section#references .quarto-auto-generated-content {
+        overflow: hidden !important;
+    }
+
+    .references {
+        column-count: 2;
+        font-size: .6em;
+        overflow: hidden;
+        text-align: justify;
+        text-wrap: wrap;
+        break-inside: avoid-column;
+    }
+
+    .references .csl-entry {
+        break-inside: avoid;
+        margin-bottom: .5em;
+    }
+
+    .csl-entry a {
+        color: black;
+    }
+
+    .csl-entry a:hover {
+        color: grey;
+    }
 }
 
 body.hide-menubar #menubarbottom,
