@@ -496,7 +496,7 @@ kbd {
     .references {
         column-count: 2;
         font-size: .6em;
-        overflow: hidden;
+        overflow: hidden !important;
         text-align: justify;
         text-wrap: wrap;
         break-inside: avoid-column;
@@ -505,6 +505,7 @@ kbd {
     .references .csl-entry {
         break-inside: avoid;
         margin-bottom: .5em;
+        text-justify: inter-word;
     }
 
     .csl-entry a {
