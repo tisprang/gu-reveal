@@ -489,13 +489,13 @@ kbd {
         font-size: 1em;
     }
 
-    section#references .quarto-auto-generated-content {
-        overflow: hidden !important;
+    .quarto-auto-generated-content {
+        overflow-y: hidden !important;
     }
 
     .references {
         column-count: 2;
-        font-size: .6em;
+        font-size: var(--quarto-refs-font-size);
         overflow: hidden !important;
         text-align: justify;
         text-wrap: wrap;
