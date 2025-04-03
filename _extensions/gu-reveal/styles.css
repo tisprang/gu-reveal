@@ -494,7 +494,7 @@ kbd {
     }
 
     .references {
-        column-count: 2;
+        column-count: var(--quarto-refs-cols);
         font-size: var(--quarto-refs-font-size);
         overflow: hidden !important;
         text-align: justify;

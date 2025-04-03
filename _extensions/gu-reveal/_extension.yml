@@ -1,6 +1,6 @@
 title: Gu-reveal
 author: tisprang
-version: 0.3.0
+version: 0.3.1
 quarto-required: ">=1.4.1"
 contributes:
   formats:
@@ -13,7 +13,7 @@ contributes:
       template: template.html
       template-partials:
         - partials/title-slide.html
-        - partials/refs-font-size.html
+        - partials/refs-style.html
       width: 1920
       height: 1080
       margin: 0
@@ -24,6 +24,7 @@ contributes:
       highlight-style: github
       fig-dpi: 300
       refs-font-size: .6em
+      refs-cols: 2
       date: today
       date-format: DD.MM.YYYY
       title-slide-attributes:

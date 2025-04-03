@@ -29,9 +29,7 @@ $endif$
   <style>
     $styles.html()$
   </style>
-$if(refs-font-size)$
-$refs-font-size.html()$
-$endif$
+$refs-style.html()$
 $if(theme)$
   <link rel="stylesheet" href="$revealjs-url$/dist/theme/$theme$.css">
 $else$
