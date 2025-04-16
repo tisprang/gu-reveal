@@ -1,6 +1,6 @@
 title: Gu-reveal
 author: tisprang
-version: 0.3.1
+version: 0.3.2
 quarto-required: ">=1.4.1"
 contributes:
   formats:
@@ -30,6 +30,7 @@ contributes:
       title-slide-attributes:
         data-state: "hide-menubar"
       section-divs: false
+      auto-stretch: false
       simplemenu:
         flat: true
         barhtml:
