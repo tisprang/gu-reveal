@@ -500,6 +500,7 @@ kbd {
         text-align: justify;
         text-wrap: wrap;
         break-inside: avoid-column;
+        margin-left: 0 !important;
     }
 
     .references .csl-entry {
