@@ -414,11 +414,7 @@ kbd {
     }
 
     .img-source a{
-        color: var(--gu-light-blue);
-    }
-
-    .img-source li:hover{
-        color: var(--gu-grey);
+        color: var(--gu-light-blue) !important;
     }
 
     .img-source li:hover a {
@@ -473,11 +469,8 @@ kbd {
         border-right:10px solid blue; 
     }
 
-    .citation {
-        font-size: .7em;
-    }
-
     .citation a {
+        font-size: .7em;
         color: var(--gu-blue);
     }
 
