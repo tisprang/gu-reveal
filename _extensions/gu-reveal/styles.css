@@ -469,7 +469,7 @@ kbd {
         border-right:10px solid blue; 
     }
 
-    .citation a {
+    .citation {
         font-size: .7em;
         color: var(--gu-blue);
     }
