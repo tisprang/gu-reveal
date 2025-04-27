@@ -474,7 +474,6 @@ kbd {
     }
 
     .citation a {
-        font-size: .7em;
         color: var(--gu-blue);
     }
 
