@@ -482,6 +482,10 @@ kbd {
         font-size: 1em;
     }
 
+    .img-source .citation a {
+        font-size: 1em;
+    }
+
     .quarto-auto-generated-content {
         overflow-y: hidden !important;
     }
