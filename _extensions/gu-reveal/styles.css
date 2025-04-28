@@ -417,8 +417,8 @@ kbd {
         color: var(--gu-light-blue) !important;
     }
 
-    .img-source li:hover a {
-        color: var(--gu-grey);
+    .img-source li a:hover {
+        color: var(--gu-grey) !important;
     }
 
     .img-source li{
