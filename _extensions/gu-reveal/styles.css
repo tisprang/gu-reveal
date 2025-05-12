@@ -501,6 +501,7 @@ kbd {
         text-wrap: wrap;
         break-inside: avoid-column;
         margin-left: 0 !important;
+        overflow-wrap: break-word;
     }
 
     .references .csl-entry {
