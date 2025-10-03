@@ -621,6 +621,7 @@ body.hide-menubar .slides {
 html.print-pdf #title-slide {
     align-content: center;
     height: 1080px;
+    background-color: var(--gu-grey);
 }
 
 html.print-pdf .title-banner {
