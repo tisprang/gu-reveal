@@ -141,11 +141,11 @@ p <- ne_countries(scale="small") |>
     geom_sf(col = "grey30") +
     coord_sf(expand = FALSE) +
     scale_fill_discrete(
-        name = "Wahlsystemtyp",
+        name = "First Letter is 'M'",
         na.translate = FALSE
     )
 
-gu_map(p)
+p <- gu_map(p)
 ```
 
 :::

@@ -492,66 +492,83 @@
 	  };
 
 	  const checkSlidesPDF = event => {
-	    let pdfPages = selectionArray(vars.viewport, '.slides .pdf-page'); // Check if any menubar has a slide number
+		// --- Always remove hide-menubar from <body> before PDF generation
+		document.body.classList.remove("hide-menubar");
 
-	    let anyMenubarHasSlidenumber = false;
+		// --- Get all the PDF pages Reveal has generated
+		const pdfPages = Array.from(document.querySelectorAll(".pdf-page"));
+		if (!pdfPages.length) {
+			console.warn("Simplemenu: No PDF pages found during PDF export.");
+			return;
+		}
 
-	    if (vars.menubars) {
-	      vars.menubars.forEach(menubar => {
-	        anyMenubarHasSlidenumber = !!menubar.getElementsByClassName("slide-number");
-	      });
-	    }
+		// --- Detect whether any existing menubar includes a slide-number element
+		let anyMenubarHasSlidenumber = false;
+		if (vars.menubars) {
+			vars.menubars.forEach(menubar => {
+			if (menubar.querySelector(".slide-number")) {
+				anyMenubarHasSlidenumber = true;
+			}
+			});
+		}
 
-	    pdfPages.forEach(pdfPage => {
-	      // The original section has gone, so we rebuild it with the saved data-attributes
-	      let datainfo = pdfPage.getElementsByClassName("datainfo")[0];
-	      let section = {};
-	      section.name = datainfo.dataset.name;
-	      section.dataname = datainfo.dataset.dataname;
-	      section.currentid = datainfo.dataset.currentid;
-	      section.match = datainfo.dataset.match;
-	      section.id = datainfo.dataset.id;
+		// --- Process each pdf-page individually
+		pdfPages.forEach((pdfPage, i) => {
+			const section = pdfPage.querySelector("section");
 
-	      if (datainfo.dataset.state) {
-	        let newClasses = datainfo.dataset.state.split(" ");
-	        newClasses.forEach(newClass => {
-	          pdfPage.classList.add(newClass);
-	          let vp = vars.deck.getRevealElement().closest(".reveal-viewport");
-	          vp.classList.remove(newClass);
-	        });
-	      } // If any menubar has a slide number, turn the original one on this slide off
+			// Skip if there's no section inside
+			if (!section) return;
 
+			// --- CASE 1: This slide requests to HIDE the menubar
+			if (section.dataset.state && section.dataset.state.includes("hide-menubar")) {
+			pdfPage.classList.add("hide-menubar");
+			return; // Do not append any menubar
+			}
 
-	      if (anyMenubarHasSlidenumber && pdfPage.getElementsByClassName("slide-number").length > 0) {
-	        pdfPage.getElementsByClassName("slide-number")[0].style.display = "none";
-	      }
+			// --- CASE 2: Normal slide, add menubar
+			if (vars.menubars) {
+			vars.menubars.forEach(menubar => {
+				// Clone existing menubar node
+				const bar = menubar.cloneNode(true);
+				pdfPage.appendChild(bar);
 
-	      if (vars.menubars) {
-	        vars.menubars.forEach(menubar => {
-	          let bar = menubar.cloneNode(true);
-	          pdfPage.appendChild(bar);
-	          let listItems = selectionArray(bar, `.${options.menuclass} ${options.activeelement}`);
-	          listItems.forEach(listItem => {
-	            compare(listItem, section);
-	          }); // If there is a slidenumber in the menu,
+				// Update active states in the menu for this section
+				const listItems = bar.querySelectorAll(`.${options.menuclass} ${options.activeelement}`);
+				listItems.forEach(listItem => {
+				// Determine if this section should be "active"
+				const sectionMatch = section.dataset[vars.matchString] || section.id;
+				const menuMatch = listItem.dataset[vars.matchString] ||
+									(listItem.querySelector("a") ? listItem.querySelector("a").dataset[vars.matchString] : null);
+				if (menuMatch && sectionMatch && menuMatch === sectionMatch) {
+					listItem.classList.add(options.activeclass);
+				} else {
+					listItem.classList.remove(options.activeclass);
+				}
+				});
 
-	          let newSN = pdfPage.querySelector(`.${options.menubarclass} .slide-number`);
-	          let oldSN = pdfPage.querySelector(`:scope > .slide-number`);
+				// --- Sync slide-number text if both exist
+				const newSN = bar.querySelector(".slide-number");
+				const oldSN = pdfPage.querySelector(":scope > .slide-number");
+				if (newSN && oldSN) newSN.textContent = oldSN.textContent;
+			});
+			}
 
-	          if (newSN && oldSN) {
-	            // ...then fill it with the current (total) slidenumber.
-	            newSN.textContent = oldSN.textContent;
-	          }
-	        });
-	      }
-	    });
+			// --- Hide duplicate slide-number if the menubar already has one
+			if (anyMenubarHasSlidenumber && pdfPage.querySelector(".slide-number")) {
+			pdfPage.querySelector(".slide-number").style.display = "none";
+			}
+		});
 
-	    if (vars.menubars) {
-	      vars.menubars.forEach(menubar => {
-	        menubar.parentNode.removeChild(menubar);
-	      });
-	    }
-	  };
+		// --- Remove the original menubar(s) from the viewport
+		if (vars.menubars) {
+			vars.menubars.forEach(menubar => {
+			if (menubar.parentNode) menubar.parentNode.removeChild(menubar);
+			});
+		}
+
+		console.log("Simplemenu PDF export patch: Applied per-page menubar visibility.");
+		};
+
 
 	  const chapterize = event => {
 	    if (event && event.type == "ready") {

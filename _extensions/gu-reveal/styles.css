@@ -5,6 +5,12 @@
     --gu-sandgrey: rgb(228, 227, 221);
     --gu-dark-grey: rgb(77, 75, 70);
     --gu-orange: rgb(201,98,21);
+    --uni-primary: var(--gu-blue);
+    --uni-secondary: var(--gu-light-blue);
+    --uni-bg: var(--gu-grey);
+    --uni-bg-secondary: var(--gu-sandgrey);
+    --uni-dark: var(--gu-dark-grey);
+    --uni-accent: var(--gu-orange);
 }
 
 @font-face {
@@ -48,9 +54,9 @@ kbd {
     h2 {
         font-size: 1.8em;
         font-family: "Univers";
-        color: var(--gu-grey);
+        color: var(--uni-bg);
         font-variant: small-caps;
-        background-color: var(--gu-dark-grey);
+        background-color: var(--uni-dark);
         position: absolute;
         left: 1%;
         top: 3%;
@@ -65,7 +71,7 @@ kbd {
     }
 
     h3 {
-        color: var(--gu-blue);
+        color: var(--uni-primary);
         font-family: "Univers";
     }
 
@@ -81,7 +87,7 @@ kbd {
     }
 
     .slides {
-        background-color: var(--gu-blue);
+        background-color: var(--uni-primary);
     }
 
     .slide-number > a[href*='title-slide'] {
@@ -123,7 +129,7 @@ kbd {
         top: 0;
         left: 0;
         opacity: 0.7;
-        background-image: linear-gradient(351deg, var(--gu-light-blue) 28%, var(--gu-blue) 87%);
+        background-image: linear-gradient(351deg, var(--uni-secondary) 28%, var(--uni-primary) 87%);
     }
 
     .title-wrapper {
@@ -143,25 +149,25 @@ kbd {
     .title {
         text-align: left;
         white-space: nowrap; 
-        color: var(--gu-grey);
+        color: var(--uni-bg);
         margin: 5px;
-        font-size: 2.2em;
+        font-size: 2.8em;
     }
 
     .title-text{
         position: relative;
         font-family: "Univers";
         font-variant: small-caps;
-        border-bottom: 2px solid var(--gu-grey);
+        border-bottom: 2px solid var(--uni-bg);
     }
 
     .subtitle {
-        color: var(--gu-grey);
+        color: var(--uni-bg);
         position: relative;
         font-family: "Univers";
         text-align: left;
         padding: 0 0 0 4%;
-        font-size: .7em;
+        font-size: 1.3em;
         margin-top: 0px !important;
         line-height: 1;
         margin-bottom: 15px !important;
@@ -182,7 +188,7 @@ kbd {
         height: 8% !important;
         max-height: 8% !important;
         width: 8% !important;
-        border-left: 2px solid var(--gu-blue);
+        border-left: 2px solid var(--uni-primary);
         object-fit: contain;
         z-index: 12 !important;
     }
@@ -197,7 +203,7 @@ kbd {
         white-space: nowrap; 
         font-family: "Arial Narrow";
         font-size: .8em;
-        color: var(--gu-grey);
+        color: var(--uni-bg);
         line-height: 1 !important;
         margin-bottom: 4px !important;
     }
@@ -222,7 +228,7 @@ kbd {
         left: 20%;
         width: 80%;
         height: 100%;
-        background-color: var(--gu-grey);
+        background-color: var(--uni-bg);
         padding-top: calc(3% + 1.8em);
         padding-left: 1%;
         padding-right: 1%;
@@ -239,11 +245,11 @@ kbd {
         height: calc(8% + 15px);
         display:block;
         background-color:inherit;
-        border-top: solid 2px var(--gu-blue);
+        border-top: solid 2px var(--uni-primary);
     }
 
     .slide-contents-wrap ::marker {
-        color: var(--gu-blue);
+        color: var(--uni-primary);
     }
 
     section.scrollable .slide-contents-wrap > * {
@@ -266,7 +272,7 @@ kbd {
         top: calc(1.8em + 10%);
         left: 2%;
         font-family: "Univers";
-        color: var(--gu-grey);
+        color: var(--uni-bg);
         font-size: .6em;
         max-height: 35%;
         max-width: 16%;
@@ -292,14 +298,14 @@ kbd {
     }
 
     #menubarbottom > ol .active {
-        border-left: 2px solid var(--gu-grey);
+        border-left: 2px solid var(--uni-bg);
         padding-left: 10px !important;
         padding-bottom: 1px;
         padding-top: 1px;
     }
 
     #menubarbottom > ol li:not(.active) {
-        border-left: 2px solid var(--gu-dark-grey);
+        border-left: 2px solid var(--uni-dark);
         padding-left: 10px !important;
         padding-bottom: 1px;
         padding-top: 1px;
@@ -307,12 +313,12 @@ kbd {
 
     #menubarbottom > ol li:hover, 
     #menubarbottom > ol li:hover a  {
-        color: var(--gu-light-blue);
+        color: var(--uni-secondary);
     }
 
     #menubarbottom > ol li a {
         display: inline;
-        color: var(--gu-grey);
+        color: var(--uni-bg);
     }
 
     #menubarbottom > ol li::marker {
@@ -320,14 +326,14 @@ kbd {
     }
 
     .progress {
-        color: var(--gu-light-blue);
+        color: var(--uni-secondary);
     }
 
     .auths {
         font-family: "Univers";
         font-variant: small-caps;
         font-size: .5em;
-        color: var(--gu-light-blue);
+        color: var(--uni-secondary);
         position: absolute;
         bottom: 0%;
         left: 0%;
@@ -351,7 +357,7 @@ kbd {
     .pres-context {
         font-family: "Univers";
         font-size: .5em;
-        color: var(--gu-blue);
+        color: var(--uni-primary);
         position: absolute;
         bottom: 0%;
         left: 20%;
@@ -362,7 +368,7 @@ kbd {
         overflow: hidden;
         z-index: 15;
         line-height: 1;
-        border-right: 2px solid var(--gu-blue);
+        border-right: 2px solid var(--uni-primary);
         height: calc(8% + 15px);
         align-content: center;
         text-wrap: balance;
@@ -376,7 +382,7 @@ kbd {
     .pres-title {
         font-family: "Univers";
         font-size: .5em;
-        color: var(--gu-blue);
+        color: var(--uni-primary);
         position: absolute;
         bottom: 0%;
         left: calc(50% + 12px);
@@ -387,7 +393,7 @@ kbd {
         overflow: hidden;
         z-index: 15;
         line-height: 1;
-        border-right: 2px solid var(--gu-blue);
+        border-right: 2px solid var(--uni-primary);
         height: calc(8% + 15px);
         align-content: center;
         text-wrap: balance;
@@ -409,16 +415,16 @@ kbd {
         max-height: 35%;
         width: 16%;
         font-family: "Univers";
-        color: var(--gu-light-blue) !important;
+        color: var(--uni-secondary) !important;
         font-size: .4em !important;
     }
 
     .img-source a{
-        color: var(--gu-light-blue) !important;
+        color: var(--uni-secondary) !important;
     }
 
     .img-source li a:hover {
-        color: var(--gu-grey) !important;
+        color: var(--uni-bg) !important;
     }
 
     .img-source li{
@@ -429,16 +435,16 @@ kbd {
 
     .slide aside {
         bottom: calc(8% + 15px);
-        color: var(--gu-blue);
+        color: var(--uni-primary);
         font-size: .4em
     }
 
     .pdf-page{
-        background-color: var(--gu-blue) !important;
+        background-color: var(--uni-primary) !important;
     }
 
     .pdf-page.hide-menubar {
-        background-color: var(--gu-grey) !important;
+        background-color: var(--uni-bg) !important;
     }
 
     .panel-tabset-tabby {
@@ -446,18 +452,18 @@ kbd {
     }
 
     .panel-tabset-tabby a {
-        color: var(--gu-blue) !important;
+        color: var(--uni-primary) !important;
     }
 
     .tab-content {
-        border: 1px solid var(--gu-blue);
+        border: 1px solid var(--uni-primary);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
     }
 
     blockquote {
         font-family: "Meridien";
-        color: var(--gu-dark-grey);
+        color: var(--uni-dark);
     }
 
     .arrow-right::before {
@@ -474,7 +480,7 @@ kbd {
     }
 
     .citation a {
-        color: var(--gu-blue);
+        color: var(--uni-primary);
     }
 
     .citation a:hover {
@@ -562,7 +568,7 @@ html:lang(de) .slide-number-a:after {
 .slide-number, .reveal.has-logo .slide-number {
     font-family: "Univers" !important;
     font-size: .5em !important;
-    color: var(--gu-blue) !important;
+    color: var(--uni-primary) !important;
     position: absolute !important;
     bottom: 0% !important;
     left: calc(80% + 24px) !important;
@@ -582,11 +588,11 @@ html:lang(de) .slide-number-a:after {
 }
 
 .slide-number, .reveal.has-logo .slide-number a {
-    color: var(--gu-blue) !important;
+    color: var(--uni-primary) !important;
     opacity: 1 !important;
 }
 .slide-number, .reveal.has-logo .slide-number a:hover {
-    color: var(--gu-blue) !important;
+    color: var(--uni-primary) !important;
     opacity: 1 !important;
 }
 
@@ -615,13 +621,13 @@ html:lang(de) .slide-number-pdf:before {
 }
 
 body.hide-menubar .slides {
-    background-color: var(--gu-grey);
+    background-color: var(--uni-bg);
 }
 
 html.print-pdf #title-slide {
     align-content: center;
     height: 1080px;
-    background-color: var(--gu-grey);
+    background-color: var(--uni-bg);
 }
 
 html.print-pdf .title-banner {
@@ -633,9 +639,33 @@ html:not(.print-pdf) .slide-background-content {
 }
 
 .lightable-striped tbody tr:nth-child(even){
-    background-color: var(--gu-sandgrey) !important;
+    background-color: var(--uni-bg-secondary) !important;
 }
 
 .lightable-hover tbody tr:hover{
-    background-color: var(--gu-light-blue) !important;
+    background-color: var(--uni-secondary) !important;
+}
+
+.uni-primary{
+    color: var(--uni-primary) !important;
+}
+
+.uni-secondary{
+    color: var(--uni-secondary) !important;
+}
+
+.uni-accent{
+    color: var(--uni-accent) !important;
+}
+
+.uni-dark{
+    color: var(--uni-dark) !important;
+}
+
+.uni-bg{
+    color: var(--uni-bg) !important;
+}
+
+.uni-bg-secondary{
+    color: var(--uni-bg-secondary) !important;
 }
