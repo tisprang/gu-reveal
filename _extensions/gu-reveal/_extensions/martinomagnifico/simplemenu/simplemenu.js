@@ -495,14 +495,14 @@
 		// --- Always remove hide-menubar from <body> before PDF generation
 		document.body.classList.remove("hide-menubar");
 
-		// --- Get all the PDF pages Reveal has generated
+		// --- Collect all PDF pages Reveal created
 		const pdfPages = Array.from(document.querySelectorAll(".pdf-page"));
 		if (!pdfPages.length) {
 			console.warn("Simplemenu: No PDF pages found during PDF export.");
 			return;
 		}
 
-		// --- Detect whether any existing menubar includes a slide-number element
+		// --- Detect whether any menubar has a slide-number
 		let anyMenubarHasSlidenumber = false;
 		if (vars.menubars) {
 			vars.menubars.forEach(menubar => {
@@ -512,34 +512,54 @@
 			});
 		}
 
-		// --- Process each pdf-page individually
+		// --- Track the current active match name across slides
+		let lastActiveMatch = null;
+
 		pdfPages.forEach((pdfPage, i) => {
 			const section = pdfPage.querySelector("section");
-
-			// Skip if there's no section inside
 			if (!section) return;
 
-			// --- CASE 1: This slide requests to HIDE the menubar
+			// --- 1. Handle slides that explicitly hide the menubar
 			if (section.dataset.state && section.dataset.state.includes("hide-menubar")) {
 			pdfPage.classList.add("hide-menubar");
-			return; // Do not append any menubar
+			return; // Skip menubar placement
 			}
 
-			// --- CASE 2: Normal slide, add menubar
+			// --- 2. Determine the match name (data-sm or data-name)
+			const sm = section.dataset[vars.matchString];   // usually data-sm
+			const name = section.dataset.name;               // fallback
+			const smFalse = sm === "false";
+			let currentMatch = null;
+
+			if (smFalse) {
+			currentMatch = null; // explicitly no active menu item
+			lastActiveMatch = null; // reset chapter context
+			} else if (sm) {
+			currentMatch = sm;
+			lastActiveMatch = sm; // update chapter context
+			} else if (name) {
+			currentMatch = name;
+			lastActiveMatch = name; // update chapter context
+			} else {
+			// Inherit previous active match if no new name/sm is defined
+			currentMatch = lastActiveMatch;
+			}
+
+			// --- 3. Add the menubar if allowed
 			if (vars.menubars) {
 			vars.menubars.forEach(menubar => {
-				// Clone existing menubar node
 				const bar = menubar.cloneNode(true);
 				pdfPage.appendChild(bar);
 
-				// Update active states in the menu for this section
 				const listItems = bar.querySelectorAll(`.${options.menuclass} ${options.activeelement}`);
+
+				// --- Add/remove active class depending on currentMatch
 				listItems.forEach(listItem => {
-				// Determine if this section should be "active"
-				const sectionMatch = section.dataset[vars.matchString] || section.id;
-				const menuMatch = listItem.dataset[vars.matchString] ||
-									(listItem.querySelector("a") ? listItem.querySelector("a").dataset[vars.matchString] : null);
-				if (menuMatch && sectionMatch && menuMatch === sectionMatch) {
+				const menuMatch =
+					listItem.dataset[vars.matchString] ||
+					(listItem.querySelector("a") ? listItem.querySelector("a").dataset[vars.matchString] : null);
+
+				if (currentMatch && menuMatch && menuMatch === currentMatch) {
 					listItem.classList.add(options.activeclass);
 				} else {
 					listItem.classList.remove(options.activeclass);
@@ -553,21 +573,22 @@
 			});
 			}
 
-			// --- Hide duplicate slide-number if the menubar already has one
+			// --- 4. Hide duplicate slide number if menubar includes one
 			if (anyMenubarHasSlidenumber && pdfPage.querySelector(".slide-number")) {
 			pdfPage.querySelector(".slide-number").style.display = "none";
 			}
 		});
 
-		// --- Remove the original menubar(s) from the viewport
+		// --- Remove the original global menubars
 		if (vars.menubars) {
 			vars.menubars.forEach(menubar => {
 			if (menubar.parentNode) menubar.parentNode.removeChild(menubar);
 			});
 		}
 
-		console.log("Simplemenu PDF export patch: Applied per-page menubar visibility.");
+		console.log("Simplemenu PDF export patch: applied per-page menubars with chapter persistence.");
 		};
+
 
 
 	  const chapterize = event => {

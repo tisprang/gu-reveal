@@ -669,3 +669,17 @@ html:not(.print-pdf) .slide-background-content {
 .uni-bg-secondary{
     color: var(--uni-bg-secondary) !important;
 }
+
+.vert-center{
+    height: 87%;
+    width: 100%;
+    align-content: center;
+}
+
+.all-center{
+    height: 87%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
