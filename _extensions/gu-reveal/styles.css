@@ -687,6 +687,6 @@ html:not(.print-pdf) .slide-background-content {
     height: 87%;
     width: 100%;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     text-align: center;
 }
