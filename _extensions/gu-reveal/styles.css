@@ -195,7 +195,7 @@ kbd {
         height: 8% !important;
         max-height: 8% !important;
         width: 8% !important;
-        border-left: 2px solid var(--uni-primary);
+        border-left: 3px solid var(--uni-primary);
         object-fit: contain;
         z-index: 12 !important;
     }
@@ -252,7 +252,7 @@ kbd {
         height: calc(8% + 15px);
         display:block;
         background-color:inherit;
-        border-top: solid 2px var(--uni-primary);
+        border-top: solid 3px var(--uni-primary);
     }
 
     .slide-contents-wrap ::marker {
@@ -280,7 +280,7 @@ kbd {
         left: 2%;
         font-family: "Univers";
         color: var(--uni-bg);
-        font-size: .6em;
+        font-size: .75em;
         max-height: 35%;
         max-width: 16%;
         overflow-y: hidden;
@@ -305,14 +305,14 @@ kbd {
     }
 
     #menubarbottom > ol .active {
-        border-left: 2px solid var(--uni-bg);
+        border-left: 4px solid var(--uni-bg);
         padding-left: 10px !important;
         padding-bottom: 1px;
         padding-top: 1px;
     }
 
     #menubarbottom > ol li:not(.active) {
-        border-left: 2px solid var(--uni-dark);
+        border-left: 4px solid var(--uni-dark);
         padding-left: 10px !important;
         padding-bottom: 1px;
         padding-top: 1px;
@@ -339,7 +339,7 @@ kbd {
     .auths {
         font-family: "Univers";
         font-variant: small-caps;
-        font-size: .5em;
+        font-size: .625em;
         color: var(--uni-secondary);
         position: absolute;
         bottom: 0%;
@@ -354,6 +354,7 @@ kbd {
         z-index: 1;
         line-height: 1;
         text-wrap: balance;
+        font-weight: 900;
     }
 
     .auths p {
@@ -363,7 +364,7 @@ kbd {
 
     .pres-context {
         font-family: "Univers";
-        font-size: .5em;
+        font-size: .625em;
         color: var(--uni-primary);
         position: absolute;
         bottom: 0%;
@@ -375,10 +376,11 @@ kbd {
         overflow: hidden;
         z-index: 15;
         line-height: 1;
-        border-right: 2px solid var(--uni-primary);
+        border-right: 3px solid var(--uni-primary);
         height: calc(8% + 15px);
         align-content: center;
         text-wrap: balance;
+        font-weight: 900;
     }
     
     .pres-context p {
@@ -388,7 +390,7 @@ kbd {
 
     .pres-title {
         font-family: "Univers";
-        font-size: .5em;
+        font-size: .625em;
         color: var(--uni-primary);
         position: absolute;
         bottom: 0%;
@@ -400,10 +402,11 @@ kbd {
         overflow: hidden;
         z-index: 15;
         line-height: 1;
-        border-right: 2px solid var(--uni-primary);
+        border-right: 3px solid var(--uni-primary);
         height: calc(8% + 15px);
         align-content: center;
         text-wrap: balance;
+        font-weight: 900;
     }
 
     .pres-title p {
@@ -423,7 +426,7 @@ kbd {
         width: 16%;
         font-family: "Univers";
         color: var(--uni-secondary) !important;
-        font-size: .4em !important;
+        font-size: .6em !important;
     }
 
     .img-source a{
@@ -574,7 +577,7 @@ html:lang(de) .slide-number-a:after {
 
 .slide-number, .reveal.has-logo .slide-number {
     font-family: "Univers" !important;
-    font-size: .5em !important;
+    font-size: .625em !important;
     color: var(--uni-primary) !important;
     position: absolute !important;
     bottom: 0% !important;
@@ -592,11 +595,13 @@ html:lang(de) .slide-number-a:after {
     top: unset !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    font-weight: 900 !important;
 }
 
 .slide-number, .reveal.has-logo .slide-number a {
     color: var(--uni-primary) !important;
     opacity: 1 !important;
+    font-weight: 900 !important;
 }
 .slide-number, .reveal.has-logo .slide-number a:hover {
     color: var(--uni-primary) !important;
