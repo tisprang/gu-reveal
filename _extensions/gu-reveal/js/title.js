@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Get the document title
-    const presTitle = document.title;
+    const presTitleMeta = document.querySelector('meta[name="pres-title"]');
+    const presTitle = presTitleMeta && presTitleMeta.content
+        ? presTitleMeta.content
+        : document.title;
 
     if (presTitle) {
         // Create the pres-title div
