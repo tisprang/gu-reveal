@@ -136,3 +136,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 </script>
+<script>
+    Reveal.on('ready', () => {
+        document.querySelectorAll('countdown-timer').forEach(t =>
+        t.replaceWith(t.cloneNode(false)));
+    });
+</script>
